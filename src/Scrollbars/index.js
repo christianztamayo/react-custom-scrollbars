@@ -283,6 +283,10 @@ export default class Scrollbars extends Component {
     }
 
     handleWindowResize() {
+        const scrollbarWidth = getScrollbarWidth(true);
+        if (this.state.scrollbarWidth !== scrollbarWidth) {
+            this.setState({ scrollbarWidth });
+        }
         this.update();
     }
 
