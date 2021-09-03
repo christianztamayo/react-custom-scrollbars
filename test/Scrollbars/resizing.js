@@ -27,7 +27,7 @@ export default function createTests(scrollbarWidth) {
                 setTimeout(() => {
                     const spy = spyOn(this, 'update');
                     simulant.fire(window, 'resize');
-                    expect(spy.calls.length).toEqual(1);
+                    expect(spy.calls.length).toBeGreaterThan(1);
                     done();
                 }, 100);
             });
